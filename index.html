@@ -141,72 +141,99 @@
     </div>
   </section>
 
-  <!-- FORMULAIRE PRÉ-INSCRIPTION -->
-  <section>
-    <h2>Pré-inscription en ligne</h2>
-    <div class="banner-info" style="margin-bottom:1.2rem;text-align:left;font-weight:400">
-      ℹ️ Cette pré-inscription ne remplace pas l'inscription officielle auprès de la fédération. Le règlement de <strong>15 €</strong> sera à effectuer au moment de votre inscription définitive.
+  <!-- Contacter les organisateurs -->
+  ```html
+<section>
+  <h2>J'ai une question</h2>
+
+  <div class="banner-info" style="margin-bottom:1.2rem;text-align:left;font-weight:400">
+    ℹ️ Une question sur la course, le bénévolat ou le sponsoring ? Contactez-nous via ce formulaire.
+  </div>
+
+  <p style="font-size:.9rem;color:#555;margin-bottom:1.2rem">
+    Les champs marqués <strong>*</strong> sont obligatoires.
+  </p>
+
+  <form action="https://formspree.io/f/mqevpnnv" method="POST">
+
+    <input type="hidden" name="_subject" value="Nouvelle question - Site Caisses à savon">
+
+    <div style="margin-bottom:1rem">
+      <label for="nom" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Nom *
+      </label>
+      <input type="text" id="nom" name="nom" required
+        placeholder="Votre nom"
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
     </div>
-    <p style="font-size:.9rem;color:#555;margin-bottom:1.2rem">Les champs marqués <strong>*</strong> sont obligatoires. Vos données ne seront utilisées qu'à des fins d'organisation et ne seront pas transmises à des tiers.</p>
 
-    <form action="https://formspree.io/f/mqevpnnv" method="POST">
-      <!-- Destinataires cachés — Formspree envoie à l'adresse configurée dans votre compte -->
-      <!-- Pour envoyer à deux adresses, configurez-le dans le tableau de bord Formspree -->
-      <input type="hidden" name="_subject" value="Pré-inscription Course de caisses à savon — Saint-Laurent-en-Royans">
-      <input type="hidden" name="_cc" value="emilie.pelizzari@outlook.fr">
+    <div style="margin-bottom:1rem">
+      <label for="prenom" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Prénom *
+      </label>
+      <input type="text" id="prenom" name="prenom" required
+        placeholder="Votre prénom"
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+    </div>
 
-      <div style="margin-bottom:1rem">
-        <label for="nom" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Nom / Prénom *</label>
-        <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
-      </div>
-      <div style="margin-bottom:1rem">
-        <label for="email" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Adresse e-mail *</label>
-        <input type="email" id="email" name="email" required placeholder="nom@exemple.fr" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
-      </div>
-      <div style="margin-bottom:1rem">
-        <label for="tel" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Téléphone</label>
-        <input type="tel" id="tel" name="telephone" placeholder="06 XX XX XX XX" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
-      </div>
-     <div style="margin-bottom:1rem">
-  <label for="age" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
-    Âge *
-  </label>
-  <input 
-    type="number"
-    id="age"
-    name="age"
-    required
-    min="1"
-    max="120"
-    placeholder="Ex : 32"
-    style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem"
-  >
-</div>
-      <div style="margin-bottom:1rem">
-        <label for="role" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Je souhaite participer en tant que *</label>
-        <select id="role" name="role" required style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;background:#fff">
-          <option value="">— Choisir —</option>
-          <option>Pilote</option>
-          <option>Bénévole</option>
-          <option>Pilote et bénévole</option>
-          <option>Partenaire / Sponsor</option>
-          <option>Autre (préciser dans le message)</option>
-        </select>
-      </div>
-      <div style="margin-bottom:1rem">
-        <label for="message" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Informations complémentaires</label>
-        <textarea id="message" name="message" rows="4" placeholder="Nom de votre caisse, disponibilités pour le bénévolat, questions…" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;resize:vertical"></textarea>
-      </div>
-      <div style="margin-bottom:1.2rem;display:flex;align-items:flex-start;gap:.6rem">
-        <input type="checkbox" id="rgpd-consent" name="rgpd_consent" required style="margin-top:4px;flex-shrink:0">
-        <label for="rgpd-consent" style="font-size:.88rem;color:#444">J'accepte que mes données soient utilisées uniquement dans le cadre de l'organisation de cette course, conformément à notre <a href="#" onclick="showMentions();return false">politique de confidentialité</a>. *</label>
-      </div>
-      <button type="submit" style="background:#c0390b;color:#fff;border:none;border-radius:8px;padding:.75rem 2rem;font-size:1rem;font-weight:600;cursor:pointer;width:100%">Envoyer ma pré-inscription</button>
-      <input type="hidden" name="_next" value="?sent=1">
-    </form>
-  </section>
+    <div style="margin-bottom:1rem">
+      <label for="age" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Âge *
+      </label>
+      <input type="number" id="age" name="age" min="1" max="120" required
+        placeholder="Ex : 32"
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+    </div>
 
-</div>
+    <div style="margin-bottom:1rem">
+      <label for="tel" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Téléphone *
+      </label>
+      <input type="tel" id="tel" name="telephone" required
+        placeholder="06 XX XX XX XX"
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <label for="email" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Adresse e-mail *
+      </label>
+      <input type="email" id="email" name="email" required
+        placeholder="nom@exemple.fr"
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <label for="role" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Vous êtes intéressé(e) en tant que *
+      </label>
+      <select id="role" name="role" required
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;background:#fff">
+        <option value="">— Choisir —</option>
+        <option>Pilote</option>
+        <option>Bénévole</option>
+        <option>Sponsor</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom:1rem">
+      <label for="message" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">
+        Mon message *
+      </label>
+      <textarea id="message" name="message" rows="6" required
+        placeholder="Écrivez votre question ici..."
+        style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;resize:vertical"></textarea>
+    </div>
+
+    <button type="submit"
+      style="background:#c0390b;color:#fff;border:none;border-radius:8px;padding:.75rem 2rem;font-size:1rem;font-weight:600;cursor:pointer;width:100%">
+      Envoyer ma question
+    </button>
+
+  </form>
+</section>
+```
+
 
 <!-- FOOTER -->
 <footer>
