@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course de caisses à savon — Saint-Laurent-en-Royans</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f3ef;color:#1a1a1a;font-size:16px;line-height:1.7}
+  a{color:#c0390b;text-decoration:underline}
+  header{background:linear-gradient(135deg,#c0390b 0%,#e85d1a 100%);color:#fff;padding:2.5rem 1.5rem 2rem;text-align:center}
+  header h1{font-size:2rem;font-weight:700;letter-spacing:.5px;margin-bottom:.4rem}
+  header .subtitle{font-size:1.05rem;opacity:.9;font-style:italic}
+  .badge{display:inline-block;background:#fff2;border:1px solid #fff4;border-radius:20px;padding:.3rem 1rem;font-size:.85rem;margin-top:1rem;letter-spacing:.3px}
+  .banner-info{background:#fff3cd;border:1.5px solid #ffc107;border-radius:10px;padding:.9rem 1.3rem;margin-bottom:1.5rem;text-align:center;font-size:.95rem;color:#856404;font-weight:500}
+  .container{max-width:760px;margin:0 auto;padding:2rem 1.5rem}
+  section{background:#fff;border-radius:12px;border:1px solid #e0ddd7;padding:1.75rem 2rem;margin-bottom:1.5rem}
+  section h2{font-size:1.2rem;font-weight:600;color:#c0390b;margin-bottom:1.1rem;padding-bottom:.6rem;border-bottom:2px solid #fde8e2}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .info-item{background:#fdf6f4;border-radius:8px;padding:.9rem 1.1rem;border-left:3px solid #c0390b}
+  .info-item label{display:block;font-size:.78rem;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.25rem}
+  .info-item span{font-size:1rem;color:#1a1a1a;font-weight:500}
+  p.desc{color:#333;margin-bottom:.8rem}
+  .links-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:.5rem}
+  .link-card{display:flex;align-items:center;gap:.7rem;background:#fdf6f4;border:1px solid #f0d5cc;border-radius:8px;padding:.85rem 1rem;text-decoration:none;color:#1a1a1a;transition:background .15s}
+  .link-card:hover{background:#fde8e2}
+  .link-card .icon{font-size:1.4rem;flex-shrink:0}
+  .lc-title{font-weight:600;font-size:.92rem;color:#c0390b;display:block;line-height:1.3}
+  .lc-sub{font-size:.78rem;color:#777;display:block;line-height:1.3}
+  .doc-bloc{background:#fdf6f4;border:1.5px solid #f0d5cc;border-radius:8px;padding:1.1rem 1.3rem;margin-bottom:1rem;display:flex;align-items:center;gap:1rem;text-decoration:none;color:#1a1a1a;transition:background .15s}
+  .doc-bloc:hover{background:#fde8e2}
+  .doc-icon{font-size:2rem;flex-shrink:0}
+  .doc-name{font-weight:600;font-size:.95rem;color:#1a1a1a;display:block}
+  .doc-desc{font-size:.83rem;color:#777;display:block;margin-bottom:.2rem}
+  .doc-dl{font-size:.85rem;color:#c0390b;font-weight:600}
+  #rgpd-banner{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:1.1rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.75rem;z-index:999;font-size:.9rem}
+  #rgpd-banner p{flex:1;min-width:220px;line-height:1.5}
+  #rgpd-banner p a{color:#f0a080}
+  .btn-rgpd{background:#c0390b;color:#fff;border:none;border-radius:6px;padding:.5rem 1.2rem;cursor:pointer;font-size:.88rem;font-weight:600;white-space:nowrap}
+  .btn-rgpd-refuse{background:transparent;color:#ccc;border:1px solid #555;border-radius:6px;padding:.5rem 1.1rem;cursor:pointer;font-size:.88rem;white-space:nowrap}
+  #mentions{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;overflow-y:auto;padding:2rem 1rem}
+  .modal-inner{background:#fff;max-width:680px;margin:auto;border-radius:12px;padding:2rem 2.5rem}
+  .modal-inner h2{font-size:1.3rem;color:#c0390b;margin-bottom:1.2rem}
+  .modal-inner h3{font-size:1rem;font-weight:600;color:#c0390b;margin:1.2rem 0 .4rem}
+  .modal-inner p{font-size:.93rem;color:#333;line-height:1.6;margin-bottom:.5rem}
+  .modal-close{float:right;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666;margin-top:-4px}
+  footer{text-align:center;padding:2rem 1rem 6rem;font-size:.82rem;color:#888}
+  footer a{color:#c0390b}
+  .sep{margin:0 .5rem}
+  @media(max-width:520px){.info-grid,.links-grid{grid-template-columns:1fr}header h1{font-size:1.5rem}.modal-inner{padding:1.5rem}.doc-bloc{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<!-- BANDEAU RGPD -->
+<div id="rgpd-banner" role="region" aria-label="Gestion des cookies">
+  <p>Ce site n'utilise aucun cookie de traçage. Les données du formulaire sont collectées uniquement pour la pré-inscription à la course. <a href="#" onclick="showMentions();return false">En savoir plus</a></p>
+  <button class="btn-rgpd-refuse" onclick="hideRgpd()">Refuser</button>
+  <button class="btn-rgpd" onclick="hideRgpd()">J'accepte</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <h1>🏎️ Course de caisses à savon</h1>
+  <p class="subtitle">Saint-Laurent-en-Royans · Royans-Vercors</p>
+  <div class="badge">📅 Dimanche 16 mai 2027 · 📍 Saint-Laurent-en-Royans</div>
+</header>
+
+<div class="container">
+
+  <div class="banner-info">
+    ⚠️ Ce site est un site de <strong>pré-inscription uniquement</strong>. L'inscription officielle auprès de la fédération sera disponible <strong>fin février 2027</strong>.
+  </div>
+
+  <!-- INFOS PRATIQUES -->
+  <section>
+    <h2>Informations pratiques</h2>
+    <div class="info-grid">
+      <div class="info-item"><label>Date</label><span>Dimanche 16 mai 2027</span></div>
+      <div class="info-item"><label>Lieu</label><span>Saint-Laurent-en-Royans</span></div>
+      <div class="info-item"><label>Tarif d'inscription</label><span>15 € — à régler à l'inscription</span></div>
+      <div class="info-item"><label>Contact</label><span><a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a></span></div>
+    </div>
+  </section>
+
+  <!-- PRÉSENTATION -->
+  <section>
+    <h2>Présentation de la course</h2>
+    <p class="desc">🎉 <strong>Elle est de retour !</strong> La course de caisses à savon fait son grand retour à Saint-Laurent-en-Royans le 16 mai 2027 !</p>
+    <p class="desc">Pilotes en herbe, constructeurs passionnés ou simples amoureux de la glisse sans moteur : c'est votre rendez-vous ! Que vous souhaitiez prendre le volant ou donner un coup de main en coulisses, <strong>toutes les bonnes volontés sont les bienvenues</strong>. Bénévoles et pilotes, inscrivez-vous dès maintenant !</p>
+    <p class="desc">Plus d'informations à venir sur le programme, le parcours et les catégories de participants.</p>
+  </section>
+
+  <!-- DOCUMENTS -->
+  <section>
+    <h2>Documents à télécharger</h2>
+    <p class="desc" style="font-size:.9rem;color:#555;margin-bottom:1rem">Téléchargez et remplissez le formulaire correspondant à votre participation, puis envoyez-le par e-mail.</p>
+
+    <a class="doc-bloc" href="benevoles.pdf" target="_blank" download>
+      <span class="doc-icon">🙋</span>
+      <div>
+        <span class="doc-name">Fiche bénévole</span>
+        <span class="doc-desc">Commissaire de course, logistique, accueil, secours…</span>
+        <span class="doc-dl">⬇️ Télécharger (PDF)</span>
+      </div>
+    </a>
+
+    <a class="doc-bloc" href="fiche_pilote.pdf" target="_blank" download>
+      <span class="doc-icon">🏎️</span>
+      <div>
+        <span class="doc-name">Fiche pilote</span>
+        <span class="doc-desc">Informations pilote, catégorie, engagement et autorisation parentale (mineurs)</span>
+        <span class="doc-dl">⬇️ Télécharger (PDF)</span>
+      </div>
+    </a>
+
+    <p style="font-size:.85rem;color:#888;margin-top:.5rem">📧 Une fois remplis, renvoyez vos formulaires à <a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a></p>
+  </section>
+
+  <!-- LIENS UTILES -->
+  <section>
+    <h2>Liens utiles</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.caisse-a-savon-alpes.com/" target="_blank" rel="noopener">
+        <span class="icon">🏔️</span>
+        <span><span class="lc-title">Fédération des Alpes</span><span class="lc-sub">Site officiel de la fédération</span></span>
+      </a>
+      <a class="link-card" href="https://www.caisse-a-savon-alpes.com/règlements" target="_blank" rel="noopener">
+        <span class="icon">📋</span>
+        <span><span class="lc-title">Règlement & infos caisses</span><span class="lc-sub">Règles officielles et caractéristiques</span></span>
+      </a>
+      <a class="link-card" href="https://www.caisse-a-savon-alpes.com/inscription-course" target="_blank" rel="noopener">
+        <span class="icon">📝</span>
+        <span><span class="lc-title">Inscription officielle</span><span class="lc-sub">Ouverture fin février 2027</span></span>
+      </a>
+      <a class="link-card" href="mailto:stlaurentcaissesasavon@mailo.com">
+        <span class="icon">✉️</span>
+        <span><span class="lc-title">Nous écrire</span><span class="lc-sub">stlaurentcaissesasavon@mailo.com</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FORMULAIRE PRÉ-INSCRIPTION -->
+  <section>
+    <h2>Pré-inscription en ligne</h2>
+    <div class="banner-info" style="margin-bottom:1.2rem;text-align:left;font-weight:400">
+      ℹ️ Cette pré-inscription ne remplace pas l'inscription officielle auprès de la fédération. Le règlement de <strong>15 €</strong> sera à effectuer au moment de votre inscription définitive.
+    </div>
+    <p style="font-size:.9rem;color:#555;margin-bottom:1.2rem">Les champs marqués <strong>*</strong> sont obligatoires. Vos données ne seront utilisées qu'à des fins d'organisation et ne seront pas transmises à des tiers.</p>
+
+    <form id="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <!-- Destinataires cachés — Formspree envoie à l'adresse configurée dans votre compte -->
+      <!-- Pour envoyer à deux adresses, configurez-le dans le tableau de bord Formspree -->
+      <input type="hidden" name="_subject" value="Pré-inscription Course de caisses à savon — Saint-Laurent-en-Royans">
+      <input type="hidden" name="_cc" value="emilie.pelizzari@outlook.fr">
+
+      <div style="margin-bottom:1rem">
+        <label for="nom" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Nom / Prénom *</label>
+        <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+      </div>
+      <div style="margin-bottom:1rem">
+        <label for="email" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Adresse e-mail *</label>
+        <input type="email" id="email" name="email" required placeholder="nom@exemple.fr" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+      </div>
+      <div style="margin-bottom:1rem">
+        <label for="tel" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Téléphone</label>
+        <input type="tel" id="tel" name="telephone" placeholder="06 XX XX XX XX" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem">
+      </div>
+      <div style="margin-bottom:1rem">
+        <label for="role" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Je souhaite participer en tant que *</label>
+        <select id="role" name="role" required style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;background:#fff">
+          <option value="">— Choisir —</option>
+          <option>Pilote</option>
+          <option>Bénévole</option>
+          <option>Pilote et bénévole</option>
+          <option>Partenaire / Sponsor</option>
+          <option>Autre (préciser dans le message)</option>
+        </select>
+      </div>
+      <div style="margin-bottom:1rem">
+        <label for="message" style="display:block;font-size:.9rem;font-weight:600;margin-bottom:.3rem">Informations complémentaires</label>
+        <textarea id="message" name="message" rows="4" placeholder="Nom de votre caisse, disponibilités pour le bénévolat, questions…" style="width:100%;padding:.6rem .9rem;border:1px solid #ccc;border-radius:6px;font-size:.95rem;resize:vertical"></textarea>
+      </div>
+      <div style="margin-bottom:1.2rem;display:flex;align-items:flex-start;gap:.6rem">
+        <input type="checkbox" id="rgpd-consent" name="rgpd_consent" required style="margin-top:4px;flex-shrink:0">
+        <label for="rgpd-consent" style="font-size:.88rem;color:#444">J'accepte que mes données soient utilisées uniquement dans le cadre de l'organisation de cette course, conformément à notre <a href="#" onclick="showMentions();return false">politique de confidentialité</a>. *</label>
+      </div>
+      <button type="submit" style="background:#c0390b;color:#fff;border:none;border-radius:8px;padding:.75rem 2rem;font-size:1rem;font-weight:600;cursor:pointer;width:100%">Envoyer ma pré-inscription</button>
+    </form>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2027 — Caisses à Savon Saint-Laurent-en-Royans <span class="sep">|</span> <a href="#" onclick="showMentions();return false">Mentions légales & Politique de confidentialité</a></p>
+  <p style="margin-top:.4rem"><a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a></p>
+</footer>
+
+<!-- MODALE MENTIONS LÉGALES -->
+<div id="mentions" role="dialog" aria-modal="true" aria-label="Mentions légales" onclick="if(event.target===this)hideMentions()">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="hideMentions()" aria-label="Fermer">×</button>
+    <h2>Mentions légales & Politique de confidentialité</h2>
+
+    <h3>1. Éditeur du site</h3>
+    <p><strong>Caisses à Savon Saint-Laurent-en-Royans</strong>, association loi 1901, dont le siège social est situé : [Adresse complète], Saint-Laurent-en-Royans.</p>
+    <p>Email : <a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a></p>
+    <p>Responsable de publication : Émilie Pelizzari.</p>
+
+    <h3>2. Hébergement</h3>
+    <p>Ce site est hébergé par GitHub Pages — GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. <a href="https://pages.github.com" target="_blank">pages.github.com</a></p>
+
+    <h3>3. Nature du site</h3>
+    <p>Ce site est un site de <strong>pré-inscription uniquement</strong>. Il ne constitue pas une inscription officielle à la course. L'inscription définitive s'effectue auprès de la Fédération des Alpes des caisses à savon via <a href="https://www.caisse-a-savon-alpes.com/inscription-course" target="_blank">son site officiel</a>, à partir de fin février 2027.</p>
+
+    <h3>4. Données personnelles (RGPD)</h3>
+    <p>Le responsable du traitement est <strong>Caisses à Savon Saint-Laurent-en-Royans</strong>. Les données collectées via le formulaire (nom, e-mail, téléphone, message) sont utilisées exclusivement pour l'organisation de la course de caisses à savon.</p>
+    <p><strong>Durée de conservation :</strong> jusqu'à la fin de l'événement (16 mai 2027), puis suppression.</p>
+    <p><strong>Base légale :</strong> consentement explicite (art. 6.1.a du RGPD).</p>
+    <p><strong>Vos droits :</strong> accès, rectification, effacement, portabilité, opposition. Contact : <a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a>. Réclamation possible auprès de la <a href="https://www.cnil.fr" target="_blank">CNIL</a>.</p>
+    <p><strong>Transfert de données :</strong> aucune transmission à des tiers ni utilisation commerciale.</p>
+
+    <h3>5. Cookies</h3>
+    <p>Ce site n'utilise aucun cookie de traçage ou d'analyse.</p>
+
+    <h3>6. Propriété intellectuelle</h3>
+    <p>Le contenu de ce site est la propriété de Caisses à Savon Saint-Laurent-en-Royans. Toute reproduction sans autorisation est interdite.</p>
+
+    <h3>7. Contact</h3>
+    <p><a href="mailto:stlaurentcaissesasavon@mailo.com">stlaurentcaissesasavon@mailo.com</a></p>
+
+    <div style="text-align:right;margin-top:1.5rem">
+      <button onclick="hideMentions()" style="background:#c0390b;color:#fff;border:none;border-radius:6px;padding:.55rem 1.5rem;font-size:.95rem;font-weight:600;cursor:pointer">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function hideRgpd(){document.getElementById('rgpd-banner').style.display='none'}
+  function showMentions(){document.getElementById('mentions').style.display='block';document.body.style.overflow='hidden'}
+  function hideMentions(){document.getElementById('mentions').style.display='none';document.body.style.overflow=''}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')hideMentions()});
+</script>
+</body>
+</html>
